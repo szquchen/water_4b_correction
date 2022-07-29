@@ -1,0 +1,23 @@
+Database file (the number of geometries may be larger than the Total number of energies and gradients)
+4b_diff_3692.xyz
+
+Coefficient output file
+coeff_grp200_diff
+
+Fitted potential file
+Fit_pot
+
+Fitted gradient file
+Fit_grad
+
+Number of atoms in the molecule
+12
+
+Number of coefficients
+200
+
+Total Number of energies in the dataset
+3692
+
+Number of inter-atomic distances
+66

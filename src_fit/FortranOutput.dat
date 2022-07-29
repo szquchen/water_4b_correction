@@ -1,0 +1,13 @@
+ reading input
+ input has been read, ntot =         3692  npoly =          200
+ opening files
+ allocating space
+ allocation done, loading the data base
+ preparing for fitting
+ Data loaded. Start fitting
+ ntot =         3692
+ ncoeff =          200
+ rank =            0
+ info =            0
+ fitting end.
+Overall RMSE for E:     6.60 cm-1
