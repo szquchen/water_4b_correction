@@ -3,13 +3,7 @@
 This is a potential energy surface (PES) that corrects the 4-body component of the MB-pol water potential [1-3]. A brief description for each folder is given below; more details can be found in README files inside the folder.
 
 ## src_fit folder
-This folder contains the program that performs the potential fitting.
-
-The dataset used for the fitting is "4b_diff_3692.xyz", which is the difference between the CCSD(T)-F12 energy and the MB-pol ones. (For reference, "4b_ccsd_3692.xyz", which contains the original CCSD(T)-F12 energies, is also included in this folder).
-
-The Fortran code "bemsa4b.f90" contains the subroutines to calculate the permutationally-invariant polynomials and their derivatives with respect to Cartesian coordinates.
-
-The Fortran code "fit_batch.f90" performs the fitting, using DGELSS from LAPACK
+This folder contains the data set used for this potential and the program that performs the potential fitting.
 
 ## coef folder
 The linear coefficients obtained from the fit are inside this folder
