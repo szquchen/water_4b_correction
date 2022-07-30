@@ -18,4 +18,6 @@ An example program that shows how to call the correction PES.
 ### Running the program
 Use the Makefile to compile the code (change the compiler and flags if needed), and then
 
-./getpot.x 
+./getpot.x
+
+The results will be printed and they should be the same as those in "expected_output".
