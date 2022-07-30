@@ -14,7 +14,7 @@ The main program that performs the fitting, using DGELSS from LAPACK. So a linea
 ### input_batch
 The input parameters for the fitting, such as the name of data file, the number of data points, number of coefficients, etc.
 
-### Running the code
+### Running the program
 Use the Makefile to compile the code (change the compiler and flags if needed), and then
 
 ./fit_batch.x
