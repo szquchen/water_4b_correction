@@ -12,7 +12,7 @@ The Fortran code "bemsa4b.f90" mainly contains the subroutines to calculate the 
 The main program that performs the fitting, using DGELSS from LAPACK. So a linear algebra library such as MKL is needed to run this program.
 
 ### input_batch
-The input parameters for the fitting, such as the name of data file, the number of data points, number of coefficients, etc.
+The input parameters for the fitting, such as the name of the data file, the number of data points, number of coefficients, etc.
 
 ### Running the program
 Use the Makefile to compile the code (change the compiler and flags if needed), and then
