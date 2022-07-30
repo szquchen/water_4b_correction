@@ -1,6 +1,8 @@
 # 4-body Correction to the MB-pol water potential
 
-This is a potential energy surface (PES) that corrects the 4-body component of the MB-pol water potential [1-3]. A brief description for each folder is given below; more details can be found in README files inside the folder.
+This is a potential energy surface (PES) that corrects the 4-body component of the MB-pol water potential [1-3]. Note that the MB-pol can be downloaded at https://github.com/paesanilab/MBX; our PES only calculates the correction.
+
+A brief description for each folder is given below; more details can be found in README files inside the folder.
 
 ## src_fit folder
 This folder contains the data set used for this potential and the program that performs the potential fitting.
