@@ -6,6 +6,10 @@ module bemsa4b
   real(wp),dimension(1:5490)::q
 
 contains
+  !=====================================!
+  ! initialzie the lambda value used in !
+  ! Morse variable y = exp(-r / lambda) !
+  !=====================================!
   subroutine init_a(lambda)
     implicit none
     real(wp),intent(in)::lambda
@@ -14,6 +18,12 @@ contains
     return
   end subroutine
 
+  !==========================================!
+  ! Compute the energy given Morse variables !
+  !   x(66): Morse variables                 !
+  !   c(200): fitting coefficients           !
+  !   v: potential energy in hartree         !
+  !==========================================!
   function emsav(x,c) result(v)
     implicit none
     real(wp),dimension(1:66)::x
@@ -26,7 +36,12 @@ contains
     
     return
   end function emsav
-  
+
+  !=====================================!
+  ! Evalute the polynomials give Morse  !
+  !   x: Morse                          !
+  !   p: permutationlly invariant polys !
+  !=====================================!
   subroutine bemsav(x,p)
     implicit none
     real(wp),dimension(1:66)::x
@@ -39,7 +54,12 @@ contains
     
     return
   end subroutine bemsav
-  
+
+  !=================================================!
+  ! Compute the Morse variables using Cartesian     !
+  !   xyz: Cartesian in bohr, in order HHHHHHHHOOOO !
+  !   x: Morse variables                            !
+  !=================================================!
   subroutine get_x(xyz,x)
     implicit none
     integer :: i,j,k
@@ -325,6 +345,11 @@ contains
     return
   end subroutine
 
+  !===============================!
+  ! Compute monomials from Morse  !
+  !   m: monomials                !
+  !   x: Morse                    !
+  !===============================!
   subroutine evmono(x,m)
     implicit none
     real(wp),dimension(1:66)::x
@@ -1773,6 +1798,11 @@ contains
     return
   end subroutine evmono
 
+  !======================================!
+  ! Compute polys from monomials         !
+  !   m: monomials                       !
+  !   p: permutationally invariant polys !
+  !======================================!
   subroutine evpoly(m,p)
     implicit none
     real(wp),dimension(1:1438)::m
@@ -8389,7 +8419,13 @@ contains
     return
   end subroutine evpoly
 
-  real function drdx (flag,xindex,xyz)
+  !=================================================================!
+  ! derivative of internuclear distances with respect to Cartesian  !
+  !   flag: index of Cartesian from 1 to 36 (36 being z of atom 12) !
+  !   xindex: index of Morse variable                               !
+  !   xyz: Cartesian coordinates in bohr                            !
+  !=================================================================!
+  real function drdx(flag,xindex,xyz)
     implicit none
     integer i,j,flag,xindex,xyzind,matom,m
     real (wp) :: xyz(12,3)
@@ -8609,6 +8645,15 @@ contains
     return
   end function
 
+  !=============================================================!
+  ! Compute the derivative of p with respect to Cartesian coord !
+  !   c: coeffiencts of the fit                                 !
+  !   m: monomials                                              !
+  !   p: polynomials                                            !
+  !   xyz: Cartesian coordinates in bohr                        !
+  !   xxp(1:36): derivative of p with respect to each component !
+  !              of xyz                                         !
+  !=============================================================!
   subroutine derivative_reverse(c,m,p,xyz,xxp)
     real(wp)::c(1:200),m(1:1438),p(1:200)
     !::::::::::::::::::::
